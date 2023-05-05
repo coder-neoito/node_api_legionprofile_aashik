@@ -1,0 +1,13 @@
+[{
+  "_id": {
+    "$oid": "6454e5adbc23f57538091257"
+  },
+  "overview": "01",
+  "gamestats": "02",
+  "collection": "03",
+  "trophies": "04",
+  "masteries": "05",
+  "monuments": "06",
+  "equips": "07",
+  "matchhistory": "08"
+}]

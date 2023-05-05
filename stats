@@ -1,0 +1,36 @@
+[{
+  "_id": {
+    "$oid": "6454e99bbc23f57538091262"
+  },
+  "playerId": "6454e6b6bc23f5753809125a",
+  "seasonStats": [
+    {
+      "season": "january",
+      "currentrating": 231,
+      "peakrating": 123,
+      "mode": "ranked",
+      "season goal": 2,
+      "rankedw/l": 21,
+      "classicw/l": 212
+    },
+    {
+      "season": "may",
+      "currentrating": 231,
+      "peakrating": 123,
+      "mode": "normal",
+      "season goal": 2,
+      "rankedw/l": 21,
+      "classicw/l": 212
+    }
+  ],
+  "allTimeStats": {
+    "peakrating": 123,
+    "totalw/l": 123,
+    "gameplayed": 123,
+    "level": 123,
+    "collectiovalue": 123,
+    "cards": 123,
+    "pity points": 123,
+    "behaviourscores": 123
+  }
+}]
