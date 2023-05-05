@@ -2,6 +2,9 @@ const express = require('express');
 const router = express.Router();
 const profileController = require('../controllers/profile');
 
+//to get the headers
+router.get('/getHeaders', profileController.getHeaders)
+
 //to get the basic profile details
 router.get('/getProfile', profileController.getProfile)
 

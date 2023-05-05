@@ -1,12 +1,25 @@
 const gameDB = require('../models/profile');
 const rolesOpening = require('../models/rolesOpening');
 const stats = require('../models/stats');
+const headers = require('../models/headers');
 const statsDataProcess = require('../services/services')
+
+exports.getHeaders = async (req, res) => {
+    try {
+        let data = await headers.findOne()
+        if (!data) throw 'Unknown error has been occured'
+        return res.send({ status: true, data, message: 'Success' })
+    } catch (e) {
+        console.log(e)
+        return res.send({ status: false, message: e })
+    }
+}
+
 
 exports.getProfile = async (req, res) => {
     try {
         if (!req.query.id) throw 'Unknown error has been occured'
-        let data = await gameDB.findbyID(req.query.id)
+        let data = await gameDB.findById(req.query.id)
         if (!data) throw 'Unknown error has been occured'
         return res.send({ status: true, data, message: 'Success' })
     } catch (e) {
@@ -18,7 +31,7 @@ exports.getProfile = async (req, res) => {
 exports.getroleOpening = async (req, res) => {
     try {
         if (!req.query.id) throw 'Unknown error has been occured'
-        let data = await rolesOpening.findbyID(req.query.id)
+        let data = await rolesOpening.findOne({ playerId: req.query.id })
         if (!data) throw 'Unknown error has been occured'
         return res.send({ status: true, data, message: 'Success' })
     } catch (e) {
@@ -29,7 +42,7 @@ exports.getroleOpening = async (req, res) => {
 exports.getStats = async (req, res) => {
     try {
         if (!req.query.id) throw 'Unknown error has been occured'
-        let data = await stats.findbyID(req.query.id)
+        let data = await stats.findOne({ playerId: req.query.id })
         if (!data) throw 'Unknown error has been occured'
         let finalData = statsDataProcess(data, req.query.season, req.query.mode)
         if (!finalData) throw 'No data preview available'
