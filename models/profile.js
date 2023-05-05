@@ -6,7 +6,8 @@ const profiles = new Schema({
   name: String,
   title: String,
   lastDate: Date,
-  type: String
+  type: String,
+  profilepicURL : String,
 });
 
 module.exports = mongoose.model('profiles', profiles);

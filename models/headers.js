@@ -7,7 +7,9 @@ const header = new Schema({
   email: String,
   title: String,
   lastDate: Date,
-  type: String
+  type: String,
+  createdat : Date,
+  updatedat : Date
 });
 
 module.exports = mongoose.model('headers', header);
