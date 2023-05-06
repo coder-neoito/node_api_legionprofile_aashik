@@ -8,6 +8,8 @@ const profiles = new Schema({
   lastDate: Date,
   type: String,
   profilepicURL : String,
+  createdat : Date,
+  updatedat : Date
 });
 
 module.exports = mongoose.model('profiles', profiles);

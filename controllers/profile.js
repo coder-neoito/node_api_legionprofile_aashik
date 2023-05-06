@@ -1,7 +1,8 @@
-const gameDB = require('../models/profile');
-const rolesOpening = require('../models/rolesOpening');
-const stats = require('../models/stats');
-const headers = require('../models/headers');
+var mongoose = require("mongoose");
+const headers = mongoose.model("headers");
+const stats = mongoose.model("stats");
+const rolesOpening = mongoose.model("rolesOpenings");
+const profiles = mongoose.model("profiles");
 const statsDataProcess = require('../services/services')
 
 exports.getHeaders = async (req, res) => {
@@ -15,11 +16,10 @@ exports.getHeaders = async (req, res) => {
     }
 }
 
-
 exports.getProfile = async (req, res) => {
     try {
         if (!req.query.id) throw 'Unknown error has been occured'
-        let data = await gameDB.findById(req.query.id)
+        let data = await profiles.findById(req.query.id)
         if (!data) throw 'Unknown error has been occured'
         return res.send({ status: true, data, message: 'Success' })
     } catch (e) {
