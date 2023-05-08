@@ -1,0 +1,9 @@
+{
+    "watch": ["controllers","models","router","services", "app.js"],
+    "ext": "js,json",
+    "ignore": ["node_modules"],
+    "execMap": {
+      "js": "node --experimental-modules"
+    }
+  }
+  
